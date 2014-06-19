@@ -1,0 +1,5 @@
+---
+  - name: "Setup jenkins user"
+    sudo: yes
+    sudo_user: root
+    user: name="jenkins" comment="Jenkins Slave" shell="/bin/bash"

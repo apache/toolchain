@@ -1,0 +1,51 @@
+---
+  - name: "Setup Tools Dir"
+    sudo: yes
+    sudo_user: jenkins
+    file: path={{t_home}} state=directory owner=jenkins
+    file: path={{t_home}}/ant state=directory owner=jenkins
+    file: path={{t_home}}/maven state=directory owner=jenkins
+
+  - name: "Download Maven"
+    sudo: yes
+    sudo_user: jenkins
+    get_url: url={{maven_url}} dest={{t_home}}/maven/maven.tar.gz mode=0744
+
+  - name: "Download Ant"
+    sudo: yes
+    sudo_user: jenkins
+    get_url: url={{ant_url}} dest={{t_home}}/ant/ant.tar.gz mode=0744
+
+  - name: "Untar Maven"
+    sudo: yes
+    sudo_user: jenkins
+    unarchive: copy=no src={{t_home}}/maven/maven.tar.gz dest={{t_home}}/maven
+
+  - name: "Untar Ant"
+    sudo: yes
+    sudo_user: jenkins
+    unarchive: copy=no src={{t_home}}/ant/ant.tar.gz dest={{t_home}}/ant
+
+  - name: "symlink Maven -> latest"
+    sudo: yes
+    sudo_user: jenkins
+    file: src=apache-maven-3.2.1 dest={{t_home}}/maven/latest state=link
+
+  - name: "symlink Ant -> latest"
+    sudo: yes
+    sudo_user: jenkins
+    file: src=apache-ant-1.9.4 dest={{t_home}}/ant/latest state=link
+
+  - name: "cleanup archives"
+    sudo: yes
+    sudo_user: jenkins
+    file: path={{t_home}}/{{item}} state=absent
+    with_items:
+      - ant/ant.tar.gz
+      - maven/maven.tar.gz
+
+  - name: "copy env file"
+    sudo: yes
+    sudo_user: jenkins
+    copy: src=files/jenkins_env.sh dest={{t_home}}/env.sh mode=755
+
