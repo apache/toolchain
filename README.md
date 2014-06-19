@@ -11,8 +11,10 @@ build toolchain based on Ansible - http://docs.ansible.com
 
 3) Clone toolchain - this github repo
 
-git clone git@github.com:hortonworks/toolchain.git 
+git clone git@github.com:hortonworks/toolchain.git
+
 git checkout -t origin/ASF-jenkins-setup -b ASF-jenkins-setup
+
 cd toolchain
 
 4) run ansible-playbook 
