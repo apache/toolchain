@@ -67,10 +67,11 @@
     - name: "Installing Libraries"
       sudo: yes
       sudo_user: root
-      apt: pkg{{item}}
-      -with_items:
-         libsnappy-dev
-         liblzo-dev
-         libcppunit-dev
+      apt: pkg={{item}} update_cache=yes state=latest
+      with_items:
+        - libsnappy-dev
+        - libcppunit-dev
+        - liblzo2-dev
+        - protobuf-compiler
 
 
