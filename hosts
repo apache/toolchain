@@ -1,0 +1,2 @@
+[jenkins-slaves]
+asf90[0:5]  ansible_ssh_user=gkesavan
