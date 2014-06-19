@@ -8,3 +8,15 @@
       - libcppunit-dev
       - liblzo2-dev
       - protobuf-compiler
+      - subversion
+      - autoconf
+      - automake
+      - libz-dev
+      - sharutils
+      - libfuse-dev
+      - libssl-dev
+      - build-essential 
+      - dh-make 
+      - debhelper 
+      - devscripts
+      - asciidoc
