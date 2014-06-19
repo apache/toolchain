@@ -44,8 +44,4 @@
       - ant/ant.tar.gz
       - maven/maven.tar.gz
 
-  - name: "copy env file"
-    sudo: yes
-    sudo_user: jenkins
-    copy: src=files/jenkins_env.sh dest={{t_home}}/env.sh mode=755
 

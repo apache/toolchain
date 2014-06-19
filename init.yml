@@ -9,8 +9,9 @@
     a_home: /home/jenkins/tools/ant
 
   tasks:
-    #- include: tasks/setup_user.yml
-    #- include: tasks/install_tools.yml
-    #- include: tasks/install_jdk.yml
+    - include: tasks/setup_user.yml
+    - include: tasks/install_tools.yml
+    - include: tasks/install_jdk.yml
     - include: tasks/install_libraries.yml
+    - include: tasks/update_configs.yml
 
