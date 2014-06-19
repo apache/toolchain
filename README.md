@@ -17,4 +17,4 @@ cd toolchain
 
 4) run ansible-playbook 
 
-ansible-playbook -i hosts slave_setup.yml
+ansible-playbook -i init.yml
