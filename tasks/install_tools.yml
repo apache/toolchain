@@ -2,20 +2,20 @@
   - name: install tools | setup tools dir
     sudo: yes
     sudo_user: jenkins
-    file: path={{tools_home}} state=directory owner=jenkins
-    file: path={{ant_home}}/ant state=directory owner=jenkins
-    file: path={{maven_home}} state=directory owner=jenkins
-    file: path={{forrest_home}} state=directory owner=jenkins
+    file: path={{t_home}} state=directory owner=jenkins mode=0775
+    file: path={{t_home}}/ant state=directory owner=jenkins mode=0775
+    file: path={{t_home}}/maven state=directory owner=jenkins mode=0775
+    file: path={{forrest_home}} state=directory owner=jenkins mode=0775
 
   - name: install tools | download maven
     sudo: yes
     sudo_user: jenkins
-    get_url: url={{maven_url}} dest={{maven_home}}/maven.tar.gz mode=0744
+    get_url: url={{maven_url}} dest={{t_home}}/maven/maven.tar.gz mode=0775
 
   - name: install tools | download maven
     sudo: yes
     sudo_user: jenkins
-    get_url: url={{ant_url}} dest={{ant_home}}/ant.tar.gz mode=0744
+    get_url: url={{ant_url}} dest={{t_home}}/ant/ant.tar.gz mode=0775
 
   - name: install tools | download forrest
     sudo: yes
