@@ -11,7 +11,7 @@ build toolchain based on Ansible - http://docs.ansible.com
 
 3) Clone toolchain - this github repo
 
-git clone git@github.com:hortonworks/toolchain.git
+git clone git@github.com:apache/toolchain.git
 
 cd toolchain
 
