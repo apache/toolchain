@@ -18,3 +18,4 @@ cd toolchain
 4) run ansible-playbook 
 
 ansible-playbook -i hosts init.yml  -v -f6
+
