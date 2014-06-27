@@ -1,12 +1,21 @@
 ---
 - hosts: jenkins-slaves
   vars:
-    maven_url: "http://mirror.nexcess.net/apache/maven/maven-3/3.2.1/binaries/apache-maven-3.2.1-bin.tar.gz"
-    ant_url: "http://www.dsgnwrld.com/am//ant/binaries/apache-ant-1.9.4-bin.tar.gz"
-    j_home: "/home/jenkins"
-    t_home: /home/jenkins/tools
-    m_home: /home/jenkins/tools/maven
-    a_home: /home/jenkins/tools/ant
+    maven_version: 3.2.1
+    ant_version: 1.9.4
+    forrest_version: 0.9
+    maven_url: http://mirror.nexcess.net/apache/maven/maven-3/{{maven_version}}/binaries/apache-maven-{{maven_version}}-bin.tar.gz
+    ant_url: http://www.dsgnwrld.com/am//ant/binaries/apache-ant-{{ant_version}}-bin.tar.gz
+    forrest_url: http://psg.mtu.edu/pub/apache/forrest/apache-forrest-{{forrest_version}}-sources.tar.gz
+    jenkins_user: jenkins
+    jenkins_home: "/home/{{jenkins_user}}"
+    tools_home: "{{jenkins_home}}/tools"
+    maven_home: "{{tools_home}}/maven"
+    ant_home: "{{tools_home}}/ant"
+    forrest_home: "{{tools_home}}/forrest"
+    m2_cache_dir: "{{jenkins_home}}/.m2"
+    ssh_dir: "{{jenkins_home}}/.ssh"
+    master_key: "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAIEAtxkcKDiPh1OaVzaVdc80daKq2sRy8aAgt8u2uEcLClzMrnv/g19db7XVggfT4+HPCqcbFbO3mtVnUnWWtuSEpDjqriWnEcSj2G1P53zsdKEu9qCGLmEFMgwcq8b5plv78PRdAQn09WCBI1QrNMypjxgCKhNNn45WqV4AD8Jp7/8= hudson@hudson.zones.apache.org"
 
   tasks:
     - include: tasks/setup_user.yml

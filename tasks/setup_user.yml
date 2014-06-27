@@ -1,5 +1,23 @@
 ---
-  - name: "Setup jenkins user"
+  - name: setup user | jenkins user
     sudo: yes
     sudo_user: root
     user: name="jenkins" comment="Jenkins Slave" shell="/bin/bash"
+
+  - name: setup user | ssh dir and m2 dir 
+    sudo: yes
+    sudo_user: jenkins
+    file: path={{ssh_dir}} state=directory mode=700
+    file: path={{m2_cache_dir}} state=directory mode=755
+    
+  - name: setup user | copy authorized_keys
+    sudo: yes
+    sudo_user: jenkins
+    authorized_key: user={{jenkins_user}}
+        key="{{ lookup('file', 'files/master_id_rsa.pub') }}"
+
+  - name: setup user | copy m2 settings.cml
+    sudo: yes
+    sudo_user: jenkins
+    copy: src=m2_settings.xml dest={{m2_cache_dir}}/settings.xml
+

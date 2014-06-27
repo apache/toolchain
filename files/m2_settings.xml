@@ -1,0 +1,28 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                      http://maven.apache.org/xsd/settings-1.0.0.xsd">
+  <servers>
+    <server>
+      <id>struts2.snapshots</id>
+      <username>wesw</username>
+    </server>
+
+    <server>
+     <id>apache.snapshots.https</id>
+     <username>ci-hudson</username>
+     <password>k1u5f4d4f1</password>
+    </server>
+
+
+</servers>
+  <mirrors>
+    <mirror>
+      <id>Nexus</id>
+      <mirrorOf>apache.snapshots</mirrorOf>
+      <name>Nexus</name>
+      <url>http://repository.apache.org/snapshots</url>
+    </mirror>
+  </mirrors>
+
+</settings>
