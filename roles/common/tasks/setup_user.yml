@@ -20,4 +20,3 @@
     sudo: yes
     sudo_user: jenkins
     copy: src=m2_settings.xml dest={{m2_cache_dir}}/settings.xml
-

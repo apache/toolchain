@@ -1,7 +1,13 @@
-[jenkins-slaves]
+[ubuntu-slaves]
 priapus ansible_ssh_user=gkesavan
 pomona  ansible_ssh_user=gkesavan
 penates ansible_ssh_user=gkesavan
 pietas  ansible_ssh_user=gkesavan
 #proserpina ansible_ssh_user=gkesavan
 
+[hadoop-slaves]
+asf90[1:5] ansible_ssh_user=gkesavan
+
+[slaves:children]
+ubuntu-slaves
+hadoop-slaves

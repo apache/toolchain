@@ -2,10 +2,10 @@
   - name: "Update limits.conf"
     sudo: yes
     sudo_user: root
-    copy: src=files/limits.conf dest=/etc/security/limits.conf
+    copy: src=limits.conf dest=/etc/security/limits.conf
 
   - name: "Copy env file"
     sudo: yes
     sudo_user: jenkins
-    copy: src=files/jenkins_env.sh dest={{tools_home}}/env.sh mode=755
+    copy: src=jenkins_env.sh dest={{tools_home}}/env.sh mode=755
 

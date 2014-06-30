@@ -1,0 +1,4 @@
+---
+  - include: setup_user.yml
+  - include: install_tools.yml
+  - include: update_configs.yml
