@@ -6,8 +6,14 @@ build toolchain based on Ansible - http://docs.ansible.com
 1) Establish connectivity b/w the ansible control machine and the ASF jenkins slaves
 
 2) Installing Ansible 
+   
+   --using pip 
+     
+     $ sudo easy_install pip
 
-* http://docs.ansible.com/intro_installation.html#installation
+     $ sudo pip install ansible
+
+
 
 3) Clone toolchain - this github repo
 
@@ -15,7 +21,12 @@ git clone git@github.com:apache/toolchain.git
 
 cd toolchain
 
+4) Edit the hosts file accordingly
+5) Edit the ansible.cfg file accordingly
+6) Edit init.yml to point to jenkins master pub key.
+
+
 4) run ansible-playbook 
 
-ansible-playbook -i hosts init.yml  -v -f6
+ansible-playbook init.yml
 

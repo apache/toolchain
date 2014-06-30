@@ -13,8 +13,8 @@
   - name: setup user | copy authorized_keys
     sudo: yes
     sudo_user: jenkins
-    authorized_key: user={{jenkins_user}}
-        key="{{ lookup('file', 'files/master_id_rsa.pub') }}"
+    authorized_key: user=jenkins
+        key="{{master_key_file}}"
 
   - name: setup user | copy m2 settings.cml
     sudo: yes

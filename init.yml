@@ -1,8 +1,9 @@
 ---
 - hosts: slaves
+  gather_facts: false 
 
   vars:
-    - master_key_file=~/.ssh/master_id_rsa.pub
+   master_key_file: "{{ lookup('file', '/Users/gkesavan/.ssh/master_id_rsa.pub' ) }}"
 
   roles:
     -  common        
