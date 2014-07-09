@@ -15,7 +15,7 @@
    pass_word: 
 
    # setup clover and pass on on the clover license file path on the controller 
-   setup_clover_license:false
+   setup_clover_license: false
    clover_license_file: 
 
 
