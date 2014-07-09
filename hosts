@@ -1,12 +1,23 @@
 [ubuntu-slaves]
-priapus ansible_ssh_user=gkesavan
-pomona  ansible_ssh_user=gkesavan
-penates ansible_ssh_user=gkesavan
-pietas  ansible_ssh_user=gkesavan
-proserpina ansible_ssh_user=gkesavan
+priapus 
+pomona
+penates
+pietas
+proserpina
 
 [hadoop-slaves]
-asf90[0:5] ansible_ssh_user=gkesavan
+asf90[0:5]
+
+
+[ubuntu-slaves:vars]
+jdk_version=7
+jvm_data_model=32
+ansible_ssh_user=gkesavan
+
+[hadoop-slaves:vars]
+jdk_version=6
+jvm_data_model=64
+ansible_ssh_user=gkesavan
 
 [slaves:children]
 ubuntu-slaves

@@ -3,8 +3,32 @@
   gather_facts: false 
 
   vars:
+   # setup jenkins master pub key set setup_master_key to true
+   # and pass the master pub key file location path
+   setup_master_key: false
    master_key_file: "{{ lookup('file', '/Users/gkesavan/.ssh/master_id_rsa.pub' ) }}"
 
+   # To setup jenkins user password, set setup_password to true 
+   # and set pass_word with the password value
+   # pass_word takes salted password
+   setup_password: false
+   pass_word: 
+
+   # setup clover and pass on on the clover license file path on the controller 
+   setup_clover_license:false
+   clover_license_file: 
+
+
+   # set install_java to true only if you want to install java.tar.gz 
+   # as it takes a very long time to download the 2.6B of tar and untar it on the slaves. 
+   install_java: false
+   java_tar_url: http://people.apache.org/~gkesavan/java.tar.gz
+
+   ## enable the below flag if you like the m2 settings be pushed and 
+   ## ensure hudson_nexus has the hudson nexus password
+   m2_settings: true
+   hudson_nexus: 
+   
   roles:
     -  common        
     -  ubuntu-slaves

@@ -4,7 +4,6 @@
     sudo_user: jenkins
     file: path={{tools_home}} state=directory owner=jenkins group=jenkins mode=0775
 
-
   - name: install tools | setup ant maven forrest tools dir
     sudo: yes
     sudo_user: jenkins
@@ -13,13 +12,42 @@
       - ant
       - maven
       - forrest
+      - clover
+      - findbugs
+      - jiracli
+
+  - name: install tools | Download java.tar.gz
+    sudo: yes
+    sudo_user: jenkins
+    get_url: url={{java_tar_url}} dest={{tools_home}}/java.tar.gz
+    when: install_java
+
+  - name: install tools | Install java.tar.gz
+    sudo: yes
+    sudo_user: jenkins
+    unarchive: copy=no src={{tools_home}}/java.tar.gz dest={{tools_home}}
+    when: install_java
+
+  - name: install tools | Install java.tar.gz
+    sudo: yes
+    sudo_user: jenkins
+    file: src={{tools_home}}/java/jdk1.6.0_45-{{jvm_data_model}} 
+          dest={{tools_home}}/java/latest state=link 
+
+
+### Download tools 
+
+  - name: install tools | download clover
+    sudo: yes
+    sudo_user: jenkins
+    get_url: url={{clover_url}} dest={{tools_home}}/clover/clover.zip mode=0775
 
   - name: install tools | download maven
     sudo: yes
     sudo_user: jenkins
     get_url: url={{maven_url}} dest={{tools_home}}/maven/maven.tar.gz mode=0775
 
-  - name: install tools | download maven
+  - name: install tools | download ant
     sudo: yes
     sudo_user: jenkins
     get_url: url={{ant_url}} dest={{tools_home}}/ant/ant.tar.gz mode=0775
@@ -29,15 +57,54 @@
     sudo_user: jenkins
     get_url: url={{forrest_url}} dest={{forrest_home}}/forrest.tar.gz mode=775
 
+  - name: install tools | download findbugs
+    sudo: yes
+    sudo_user: jenkins
+    get_url: url={{findbugs_url}} dest={{findbugs_home}}/findbugs.tar.gz mode=775
+
+  - name: install tools | download jiracli
+    sudo: yes
+    sudo_user: jenkins
+    get_url: url={{jiracli_url}} dest={{jiracli_home}}/jiracli.zip mode=775
+
+ ### unarchive tools   
+
+  - name: install tools | untar clover
+    sudo: yes
+    sudo_user: jenkins
+    unarchive: copy=no src={{clover_home}}/clover.zip dest={{clover_home}}
+
   - name: install tools | untar maven
     sudo: yes
     sudo_user: jenkins
-    unarchive: copy=no src={{maven_home}}/maven.tar.gz dest={{tools_home}}/maven
+    unarchive: copy=no src={{maven_home}}/maven.tar.gz dest={{maven_home}}
 
   - name: install tools | untar ant
     sudo: yes
     sudo_user: jenkins
-    unarchive: copy=no src={{ant_home}}/ant.tar.gz dest={{tools_home}}/ant
+    unarchive: copy=no src={{ant_home}}/ant.tar.gz dest={{ant_home}}
+
+  - name: install tools | untar forrest
+    sudo: yes
+    sudo_user: jenkins
+    unarchive: copy=no src={{forrest_home}}/forrest.tar.gz dest={{forrest_home}}
+
+  - name: install tools | untar findbugs
+    sudo: yes
+    sudo_user: jenkins
+    unarchive: copy=no src={{findbugs_home}}/findbugs.tar.gz dest={{findbugs_home}}
+
+  - name: install tools | untar jiracli
+    sudo: yes
+    sudo_user: jenkins
+    unarchive: copy=no src={{jiracli_home}}/jiracli.zip dest={{jiracli_home}}
+
+###symlink -> latest
+
+  - name: install tools | symlink clover -> latest
+    sudo: yes
+    sudo_user: jenkins
+    file: src=clover-ant-{{clover_version}} dest={{clover_home}}/latest state=link
 
   - name: install tools | symlink maven -> latest
     sudo: yes
@@ -49,6 +116,37 @@
     sudo_user: jenkins
     file: src=apache-ant-{{ant_version}} dest={{ant_home}}/latest state=link
 
+  - name: install tools | symlink forrest -> latest
+    sudo: yes
+    sudo_user: jenkins
+    file: src=apache-forrest-{{forrest_version}} dest={{forrest_home}}/latest state=link
+
+  - name: install tools | symlink findbugs -> latest
+    sudo: yes
+    sudo_user: jenkins
+    file: src=findbugs-{{findbugs_version}} dest={{findbugs_home}}/latest state=link
+
+  - name: install tools | symlink jiracli -> latest
+    sudo: yes
+    sudo_user: jenkins
+    file: src=jira-cli-{{jiracli_version}} dest={{jiracli_home}}/latest state=link
+
+  - name: install tools | symlink jiracli | jiracli | jira.sh -> jira
+    sudo: yes
+    sudo_user: jenkins
+    file: src={{jiracli_home}}/latest/jira.sh dest={{jiracli_home}}/latest/jira state=link
+
+## Setup clover license 
+
+  - name: install tools | setup clover license
+    sudo: yes
+    sudo_user: jenkins
+    copy: src={{clover_license_file}} dest={{clover_home}}/latest/lib/clover.license
+    when: setup_clover_license
+
+
+## cleanup downloaded archives    
+
   - name: install tools | cleanup remains 
     sudo: yes
     sudo_user: jenkins
@@ -56,4 +154,7 @@
     with_items:
       - ant/ant.tar.gz
       - maven/maven.tar.gz
-      - forrest/forest.tar.gz
+      - forrest/forrest.tar.gz
+      - clover/clover.zip
+      - jiracli/jiracli.zip
+      - findbugs/findbugs.tar.gz

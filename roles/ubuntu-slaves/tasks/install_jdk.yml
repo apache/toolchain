@@ -15,5 +15,5 @@
   - name: "Install Oracle JDK6"
     sudo: yes 
     sudo_user: root
-    apt: pkg=oracle-java6-installer state=present force=yes
+    apt: pkg=oracle-java{{jdk_version}}-installer state=present force=yes
 
