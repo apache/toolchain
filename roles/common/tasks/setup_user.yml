@@ -30,9 +30,3 @@
     sudo_user: jenkins
     file: path={{ssh_dir}} state=directory mode=700
     file: path={{m2_cache_dir}} state=directory mode=755
-    
-  - name: setup user | copy m2 settings.cml
-    sudo: yes
-    sudo_user: jenkins
-    copy: src=m2_settings.xml dest={{m2_cache_dir}}/settings.xml
-
