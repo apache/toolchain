@@ -25,8 +25,9 @@
           state=link
     when: setup_master_key
 
-  - name: setup user | ssh dir and m2 dir 
+  - name: setup user | ssh dir and m2 dir + hudson symlink
     sudo: yes
     sudo_user: jenkins
     file: path={{ssh_dir}} state=directory mode=700
     file: path={{m2_cache_dir}} state=directory mode=755
+    file: src=/home/jenkins dest=/home/hudson symlink state=link
