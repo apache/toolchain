@@ -26,7 +26,7 @@
 
    ## enable the below flag if you like the m2 settings be pushed and 
    ## ensure hudson_nexus has the hudson nexus password
-   m2_settings: true
+   m2_settings: false
    hudson_nexus: 
    
   roles:
