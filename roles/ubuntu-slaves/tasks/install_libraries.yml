@@ -19,16 +19,19 @@
       - lib32bz2-1.0
       - libc6-dev-i386
       - libcppunit-dev
+      - libcurl4-nss-dev
       - libcurl4-openssl-dev
       - libfuse-dev
       - libjpeg8-dev
       - liblzo2-dev
+      - libsasl2-dev
       - libsnappy-dev
       - libssl-dev
       - libtool
       - libz-dev
       - pkg-config
       - protobuf-compiler
+      - python-boto
       - python-dev
       - python-svn
       - sharutils
