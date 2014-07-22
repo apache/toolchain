@@ -4,6 +4,11 @@
     sudo_user: root
     copy: src=limits.conf dest=/etc/security/limits.conf
 
+  - name: update_configs | /etc/pam.d/common-session
+    sudo: yes
+    sudo_user: root
+    copy: src=common-session dest=/etc/pam.d/common-session
+
   - name: update_configs | settings.xml
     sudo: yes
     sudo_user: jenkins
