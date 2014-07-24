@@ -14,6 +14,8 @@
       - dh-make
       - debhelper
       - devscripts
+      - g++-multilib
+      - gcc-multilib
       - lib32z1
       - lib32ncurses5
       - lib32bz2-1.0
