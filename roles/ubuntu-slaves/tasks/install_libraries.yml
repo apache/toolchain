@@ -37,4 +37,5 @@
       - python-dev
       - python-svn
       - sharutils
-      - subversion
+      - g++-4.8-multilib
+      - libstdc++-4.8-dev
