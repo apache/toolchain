@@ -1,4 +1,9 @@
 ---
+  - name: Install_svn-1.6 | update source.list
+    sudo: yes
+    sudo_user: root
+    copy: src=sources.list dest=/etc/apt/sources.list
+
   - name: "Installing Libraries"
     sudo: yes
     sudo_user: root
@@ -35,7 +40,6 @@
       - protobuf-compiler
       - python-boto
       - python-dev
-      - python-svn
       - sharutils
       - g++-4.8-multilib
       - libstdc++-4.8-dev
