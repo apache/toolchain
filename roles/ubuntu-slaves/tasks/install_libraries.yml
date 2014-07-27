@@ -103,3 +103,8 @@
       - libswt-gtk-3-jni 
       - libswt-gtk-3-java
       - unzip
+
+  - name: "Installing rvm"
+    sudo: yes
+    sudo_user: jenkins
+    shell: curl -L https://get.rvm.io | bash -s stable --autolibs=3 creates=~/.rvm
