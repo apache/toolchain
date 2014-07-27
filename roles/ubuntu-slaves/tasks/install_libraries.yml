@@ -107,4 +107,4 @@
   - name: "Installing rvm"
     sudo: yes
     sudo_user: jenkins
-    shell: curl -L https://get.rvm.io | bash -s stable --autolibs=3 creates=~/.rvm
+    shell: curl -L https://get.rvm.io | bash -s stable --autolibs=read-fail creates=~/.rvm
