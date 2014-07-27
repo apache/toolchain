@@ -1,6 +1,6 @@
 ---
 - hosts: slaves
-  gather_facts: false 
+  gather_facts: true
 
   vars:
    # setup jenkins master pub key set setup_master_key to true

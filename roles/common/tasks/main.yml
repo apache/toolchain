@@ -2,3 +2,4 @@
   - include: setup_user.yml
   - include: install_tools.yml
   - include: update_configs.yml
+  - include: update_etc_hosts.yml

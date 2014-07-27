@@ -1,23 +1,25 @@
 [ubuntu-slaves]
-priapus 
-pomona
-penates
-pietas
-proserpina
+priapus.apache.org 
+pomona.apache.org
+penates.apache.org
+pietas.apache.org
+proserpina.apache.org
 
 [hadoop-slaves]
-asf90[0:5]
+asf90[0:5].gq1.ygridcore.net
 
 
 [ubuntu-slaves:vars]
 jdk_version=7
 jvm_data_model=32
 ansible_ssh_user=gkesavan
+update_etc_hosts=false
 
 [hadoop-slaves:vars]
 jdk_version=6
 jvm_data_model=64
 ansible_ssh_user=gkesavan
+update_etc_hosts=true
 
 [slaves:children]
 ubuntu-slaves

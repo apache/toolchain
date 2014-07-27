@@ -1,0 +1,7 @@
+---
+  - name: update_configs | /etc/hosts    
+    sudo: yes
+    sudo_user: root
+    template: src=hosts.j2 dest=/etc/hosts 
+               owner=root group=root mode=0644
+    when: update_etc_hosts
