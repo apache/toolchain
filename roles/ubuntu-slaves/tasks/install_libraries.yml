@@ -17,6 +17,7 @@
       - build-essential
       - cabal-install
       - cmake
+      - cppcheck
       - curl
       - dh-make
       - debhelper
@@ -26,6 +27,7 @@
       - erlang-dev
       - flex
       - g++
+      - g++-4.8-multilib
       - g++-multilib
       - gcc-multilib
       - ghc
@@ -37,7 +39,9 @@
       - lib32bz2-1.0
       - libbit-vector-perl
       - libboost-dev
+      - libboost-filesystem-dev
       - libboost-program-options-dev
+      - libboost-system-dev
       - libboost-test-dev
       - libc6-dev-i386
       - libclass-accessor-class-perl
@@ -60,6 +64,7 @@
       - libsasl2-dev
       - libsnappy-dev
       - libssl-dev
+      - libstdc++-4.8-dev
       - libtool
       - libxml-xpath-perl
       - libz-dev
@@ -71,6 +76,7 @@
       - nodejs
       - nodejs-dev
       - npm
+      - nsis
       - mono-devel
       - mono-gmcs
       - php5
@@ -90,5 +96,4 @@
       - ruby
       - ruby-dev
       - sharutils
-      - g++-4.8-multilib
-      - libstdc++-4.8-dev
+      - sloccount
