@@ -2,12 +2,14 @@
   - name: Install_svn-1.6 | update source.list
     sudo: yes
     sudo_user: root
+    tags: install_libraries
     copy: src=sources.list dest=/etc/apt/sources.list
 
   - name: "Installing Libraries"
     sudo: yes
     sudo_user: root
     apt: pkg={{item}} update_cache=yes state=latest
+    tags: install_libraries
     with_items:
       - ant
       - asciidoc
@@ -69,7 +71,7 @@
       - libxml-xpath-perl
       - libz-dev
       - lua5.2
-      - lua5.2-dev
+      - liblua5.2-dev
       - mingw32
       - mingw32-binutils
       - mingw32-runtime
@@ -97,3 +99,7 @@
       - ruby-dev
       - sharutils
       - sloccount
+      - g++-4.8-multilib
+      - libstdc++-4.8-dev
+      - libswt-gtk-3-jni 
+      - libswt-gtk-3-java
