@@ -21,6 +21,7 @@
         path=/etc/ssh/ssh_keys/services/jenkins.pub
         key="{{master_key_file}}"
     when: setup_master_key
+    tags: setup_master_key
 
   - name: setup user | jekins user | symlink pub key
     sudo: yes
@@ -29,12 +30,14 @@
           dest=/etc/ssh/ssh_keys/jenkins.pub 
           state=link
     when: setup_master_key
+    tags: setup_master_key
 
   - name: setup user | ssh dir and m2 dir + hudson symlink
     sudo: yes
     sudo_user: jenkins
     file: path={{ssh_dir}} state=directory mode=700
     file: path={{m2_cache_dir}} state=directory mode=755
+    tags: setup_master_key
 
   - name: setup user | ssh dir and m2 dir + hudson symlink
     sudo: yes
