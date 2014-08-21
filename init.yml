@@ -30,5 +30,5 @@
    hudson_nexus: 
    
   roles:
-    -  common        
     -  ubuntu-slaves
+    -  common

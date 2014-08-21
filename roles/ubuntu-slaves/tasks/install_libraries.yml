@@ -48,8 +48,6 @@
       - libc6-dev-i386
       - libclass-accessor-class-perl
       - libcppunit-dev
-      - libcurl4-nss-dev
-      - libcurl4-openssl-dev
       - libevent-dev
       - libfuse-dev
       - libghc-binary-dev
@@ -103,3 +101,4 @@
       - libstdc++-4.8-dev
       - libswt-gtk-3-jni 
       - libswt-gtk-3-java
+      - unzip
