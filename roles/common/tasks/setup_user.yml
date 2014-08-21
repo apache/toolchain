@@ -1,4 +1,9 @@
 ---
+  - name: setup_user | jenkins group
+    sudo: yes
+    sudo_user: root
+    group: name="jenkins" state=present
+
   - name: setup user | jenkins user
     sudo: yes
     sudo_user: root
