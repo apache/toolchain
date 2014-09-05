@@ -48,7 +48,7 @@
       - libc6-dev-i386
       - libclass-accessor-class-perl
       - libcppunit-dev
-      - libcurl
+      - libcurl3
       - libevent-dev
       - libfuse-dev
       - libghc-binary-dev
