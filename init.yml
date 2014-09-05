@@ -6,7 +6,7 @@
    # setup jenkins master pub key set setup_master_key to true
    # and pass the master pub key file location path
    setup_master_key: false
-   master_key_file: "{{ lookup('file', '/Users/gkesavan/.ssh/master_id_rsa.pub' ) }}"
+   master_key_file: "{{ lookup('file', '/Users/$USER/.ssh/master_id_rsa.pub' ) }}"
 
    # To setup jenkins user password, set setup_password to true 
    # and set pass_word with the password value

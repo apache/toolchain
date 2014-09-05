@@ -13,13 +13,13 @@ asf9[06:11].gq1.ygridcore.net
 [ubuntu-slaves:vars]
 jdk_version=7
 jvm_data_model=32
-ansible_ssh_user=gkesavan
+ansible_ssh_user=$USER
 update_etc_hosts=false
 
 [hadoop-slaves:vars]
 jdk_version=6
 jvm_data_model=64
-ansible_ssh_user=gkesavan
+ansible_ssh_user=$USER
 update_etc_hosts=true
 
 [slaves:children]
