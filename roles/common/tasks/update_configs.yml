@@ -18,3 +18,13 @@
                owner=jenkins group=jenkins 
     when: m2_settings
     tags: update_configs
+
+  - name: update_configs | sshd_config
+    sudo: yes
+    sudo_user: root
+    lineinfile: dest=/etc/ssh/sshd_config
+                regexp="^UsePAM\s+no"
+                line="UsePAM                          yes"
+                state=present
+    tags: update_configs
+    
