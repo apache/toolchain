@@ -24,6 +24,7 @@
       - dh-make
       - debhelper
       - devscripts
+      - emacs24-nox
       - erlang-base
       - erlang-eunit
       - erlang-dev
