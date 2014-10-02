@@ -27,4 +27,9 @@
                 line="UsePAM                          yes"
                 state=present
     tags: update_configs
-    
+
+  - name: update_configs | sshd restart
+    sudo: yes
+    sudo_user: root
+    service: name=ssh state=restarted
+    tags: update_configs
