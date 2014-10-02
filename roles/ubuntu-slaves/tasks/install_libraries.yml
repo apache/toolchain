@@ -9,7 +9,7 @@
     sudo: yes
     sudo_user: root
     apt: update_cache=yes
-    tags install_libraries
+    tags: install_libraries
     
   - name: "Installing Libraries"
     sudo: yes
