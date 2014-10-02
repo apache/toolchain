@@ -5,6 +5,12 @@
     tags: install_libraries
     copy: src=sources.list dest=/etc/apt/sources.list
 
+  - name: apt-get update
+    sudo: yes
+    sudo_user: root
+    apt: update_cache=yes
+    tags install_libraries
+    
   - name: "Installing Libraries"
     sudo: yes
     sudo_user: root
@@ -24,6 +30,7 @@
       - dh-make
       - debhelper
       - devscripts
+      - emacs24-nox
       - erlang-base
       - erlang-eunit
       - erlang-dev
@@ -78,6 +85,7 @@
       - nodejs-dev
       - npm
       - nsis
+      - ntp
       - mono-devel
       - mono-gmcs
       - php5
@@ -91,17 +99,20 @@
       - python-all-dbg
       - python-boto
       - python-dev
+      - python-pip
       - python-setuptools
       - python-support
       - re2c
       - ruby
       - ruby-dev
+      - screen
       - sharutils
       - sloccount
       - g++-4.8-multilib
       - libstdc++-4.8-dev
       - libswt-gtk-3-jni 
       - libswt-gtk-3-java
+      - tmux
       - unzip
 
   - name: "Installing rvm"

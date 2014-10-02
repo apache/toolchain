@@ -5,7 +5,7 @@
 
 1. Establish connectivity b/w the ansible control machine and the ASF jenkins slaves
 2. Installing Ansible 
-   *using pip 
+   * using pip 
      ** $ sudo easy_install pip
      ** $ sudo pip install ansible
 
@@ -20,5 +20,5 @@
 6. Edit init.yml to point to jenkins master pub key.
 
 7. run ansible-playbook 
-   *ansible-playbook init.yml
+   * ansible-playbook init.yml
 
