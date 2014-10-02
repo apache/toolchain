@@ -5,6 +5,12 @@
     tags: install_libraries
     copy: src=sources.list dest=/etc/apt/sources.list
 
+  - name: apt-get update
+    sudo: yes
+    sudo_user: root
+    apt: update_cache=yes
+    tags install_libraries
+    
   - name: "Installing Libraries"
     sudo: yes
     sudo_user: root
@@ -79,6 +85,7 @@
       - nodejs-dev
       - npm
       - nsis
+      - ntp
       - mono-devel
       - mono-gmcs
       - php5
