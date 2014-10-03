@@ -46,6 +46,7 @@
       - lib32z1
       - lib32ncurses5
       - lib32bz2-1.0
+      - libapr1-dev
       - libbit-vector-perl
       - libboost-dev
       - libboost-filesystem-dev
@@ -74,6 +75,7 @@
       - libsnappy-dev
       - libssl-dev
       - libstdc++-4.8-dev
+      - libsvn-dev
       - libtool
       - libxml-xpath-perl
       - libz-dev
