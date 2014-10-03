@@ -79,6 +79,10 @@
       - libtool
       - libxml-xpath-perl
       - libz-dev
+      - linux-headers-3.13.0-36
+      - linux-headers-3.13.0-36-generic
+      - linux-image-3.13.0-36-generic
+      - linux-image-3.13.0-36-lowlatency
       - lua5.2
       - liblua5.2-dev
       - mingw32
