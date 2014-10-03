@@ -56,6 +56,7 @@
       - libclass-accessor-class-perl
       - libcppunit-dev
       - libcurl3
+      - libcurl3-dev
       - libevent-dev
       - libfuse-dev
       - libghc-binary-dev
