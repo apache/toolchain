@@ -19,7 +19,7 @@
   - name: install tools | Get old java.tar.gz checksum
     sudo: yes
     sudo_user: jenkins
-    command: md5sum {{tools_home}} > {{tools_home}}/java.tar.gz.md5
+    command: md5sum {{tools_home}}/java.tar.gz > {{tools_home}}/java.tar.gz.md5
     ignore_errors: True
       
   - name: install tools | Download java.tar.gz
