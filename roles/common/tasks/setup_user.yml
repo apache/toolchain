@@ -43,3 +43,10 @@
     sudo: yes
     sudo_user: root
     file: src=/home/jenkins dest=/home/hudson state=link owner=jenkins group=jenkins
+
+  - name: setup user | set umask in .profile
+    sudo: yes
+    sudo_user: root
+    lineinfile: dest=/home/jenkins/.profile
+                line="umask 022"
+                state=present
