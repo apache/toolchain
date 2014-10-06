@@ -96,7 +96,6 @@
       - linux-image-3.13.0-36-generic
       - linux-image-3.13.0-36-lowlatency
       - lua5.2
-      - lua5.2-dev
       - liblua5.2-dev
       - lxc-docker
       - mingw32
