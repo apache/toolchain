@@ -33,3 +33,12 @@
     sudo_user: root
     service: name=ssh state=restarted
     tags: update_configs
+
+  - name: update_configs | set USERGROUPS_ENAB to no
+    sudo: yes
+    sudo_user: root
+    lineinfile: dest=/etc/login.defs
+                regexp="^USERGROUPS_ENAB yes"
+                line="USERGROUPS_ENAB no"
+                state=present
+    tags: update_configs
