@@ -68,8 +68,6 @@
       - libcppunit-dev
       - libcurl3
       - libcurl3-dev
-      - libcurl4-nss-dev
-      - libcurl4-openssl-dev
       - libevent-dev
       - libfuse-dev
       - libghc-binary-dev
