@@ -5,6 +5,16 @@
     tags: install_libraries
     copy: src=sources.list dest=/etc/apt/sources.list
 
+  - name: "Importing lxc-docker apt key"
+    sudo: yes
+    sudo_user: root
+    shell: apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 36A1D7869245C8950F966E92D8576A8BA88D21E9
+
+  - name: "Adding lxc-docker apt repo"
+    sudo: yes
+    sudo_user: root
+    apt_repository: repo='deb https://get.docker.io/ubuntu docker main' state=present
+
   - name: apt-get update
     sudo: yes
     sudo_user: root
@@ -85,6 +95,7 @@
       - linux-image-3.13.0-36-lowlatency
       - lua5.2
       - liblua5.2-dev
+      - lxc-docker
       - mingw32
       - mingw32-binutils
       - mingw32-runtime
@@ -126,3 +137,6 @@
     sudo: yes
     sudo_user: jenkins
     shell: curl -L https://get.rvm.io | bash -s stable --autolibs=read-fail creates=~/.rvm
+
+    
+    
