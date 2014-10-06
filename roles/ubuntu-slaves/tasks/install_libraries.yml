@@ -132,6 +132,7 @@
       - libswt-gtk-3-java
       - tmux
       - unzip
+      - xvfb
 
   - name: "Installing rvm"
     sudo: yes
