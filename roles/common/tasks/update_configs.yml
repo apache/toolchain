@@ -19,11 +19,18 @@
     when: m2_settings
     tags: update_configs
 
-  - name: update_configs | sshd_config
+  - name: update_configs | sshd_config cleanout
     sudo: yes
     sudo_user: root
     lineinfile: dest=/etc/ssh/sshd_config
                 regexp="^UsePAM\s+no"
+                state=absent
+    tags: update_configs
+
+  - name: update_configs | sshd_config update
+    sudo: yes
+    sudo_user: root
+    lineinfile: dest=/etc/ssh/sshd_config
                 line="UsePAM                          yes"
                 state=present
     tags: update_configs
@@ -34,11 +41,18 @@
     service: name=ssh state=restarted
     tags: update_configs
 
-  - name: update_configs | set USERGROUPS_ENAB to no
+  - name: update_configs | remove USERGROUPS_ENAB yes
     sudo: yes
     sudo_user: root
     lineinfile: dest=/etc/login.defs
                 regexp="^USERGROUPS_ENAB yes"
+                state=absent
+    tags: update_configs
+
+  - name: update_configs | set USERGROUPS_ENAB to no
+    sudo: yes
+    sudo_user: root
+    lineinfile: dest=/etc/login.defs
                 line="USERGROUPS_ENAB no"
                 state=present
     tags: update_configs
