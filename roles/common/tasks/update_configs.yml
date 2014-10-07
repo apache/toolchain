@@ -34,12 +34,14 @@
                 line="UsePAM                          yes"
                 state=present
     tags: update_configs
+    register: sshd_config_update
 
   - name: update_configs | sshd restart
     sudo: yes
     sudo_user: root
     service: name=ssh state=restarted
     tags: update_configs
+    when: sshd_config_update|changed
 
   - name: update_configs | remove USERGROUPS_ENAB yes
     sudo: yes

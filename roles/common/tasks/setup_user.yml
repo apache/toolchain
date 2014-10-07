@@ -12,6 +12,7 @@
           groups=sshusers,docker
           password={{pass_word}}
     when: setup_password
+    register: jenkins_user
 
   - name: setup user | setup authorized_keys
     sudo: yes
@@ -55,4 +56,4 @@
     sudo: yes
     sudo_user: root
     service: name=docker state=restarted
-
+    when: jenkins_user|changed
