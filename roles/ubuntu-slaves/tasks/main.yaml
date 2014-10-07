@@ -1,4 +1,4 @@
 ---
   - include: install_jdk.yml       
   - include: install_libraries.yml
-  - include: install_svn-1.6.yml
+
