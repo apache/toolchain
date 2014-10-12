@@ -165,5 +165,14 @@
     sudo_user: jenkins
     shell: curl -L https://get.rvm.io | bash -s stable --autolibs=read-fail creates=~/.rvm
 
+  - name: "Installing bundler and rake gems"
+    sudo: yes
+    sudo_user: root
+    gem: name={{item}} user_install=no state=latest
+    with_items:
+      - bundler
+      - rake
+    tags: install_libraries
+    
     
     
