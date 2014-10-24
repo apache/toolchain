@@ -23,4 +23,5 @@
  jiracli_home: "{{tools_home}}/jiracli"
  clover_home: "{{tools_home}}/clover"
  m2_cache_dir: "{{jenkins_home}}/.m2"
+ buildr_dir: "{{jenkins_home}}/.buildr"
  ssh_dir: "{{jenkins_home}}/.ssh"
