@@ -19,6 +19,11 @@
     with_items:
       - "oracle-java{{jdk_version}}-installer"
 
+  - name: "Install openjdk-6-jdk"
+    sudo: yes
+    apt: pkg=openjdk-6-jdk state=present update_cache=yes
+    tags: openjdk6
+
   - name: "Install Open JDK7"
     sudo: yes 
     apt: pkg=openjdk-7-jdk state=present update_cache=yes
