@@ -127,6 +127,7 @@
       - mingw32-runtime
       - nodejs
       - nodejs-dev
+      - nodejs-legacy
       - npm
       - nsis
       - ntp
