@@ -27,6 +27,14 @@
     when: m2_settings
     tags: update_configs
 
+  - name: update_configs | npmrc
+    sudo: yes
+    sudo_user: jenkins
+    template: src=npmrc.j2 dest={{jenkins_home}}/.npmrc
+               owner=jenkins group=jenkins 
+    when: npmrc_setup
+    tags: update_configs
+
   - name: update_configs | sshd_config cleanout
     sudo: yes
     sudo_user: root

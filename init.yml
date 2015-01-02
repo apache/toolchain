@@ -28,7 +28,11 @@
    ## ensure hudson_nexus has the hudson nexus password
    m2_settings: false
    hudson_nexus: 
-   
+
+   ## enable the flag below to set up .npmrc as well
+   npmrc_setup: false
+   npmrc_password:
+  
   roles:
     -  ubuntu-slaves
     -  common
