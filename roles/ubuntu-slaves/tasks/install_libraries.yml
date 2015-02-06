@@ -76,6 +76,7 @@
       - g++-4.8-multilib
       - g++-multilib
       - gcc-multilib
+      - genisoimage
       - ghc
       - git-core
       - golang
