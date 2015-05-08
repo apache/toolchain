@@ -185,4 +185,3 @@
     sudo: yes
     sudo_user: jenkins
     file: src=/usr/local/jenkins/java/jdk1.7.0_79 dest={{tools_home}}/java/jdk1.7.0_79 state=link
-    when: 7u79|changed
