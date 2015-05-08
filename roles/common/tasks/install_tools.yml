@@ -178,7 +178,7 @@
 
   - name: "Install JDK7u79 unlimited security"
     sudo: yes 
-    apt: pkg=asf-build-jdk-1.7.0_79-unlimited-security state=present update_cache=yes
+    apt: pkg=asf-build-jdk-1.7.0-79-unlimited-security state=present update_cache=yes
     register: 7u79
 
   - name: "Symlink JDK7u79 to /home/jenkins/tools/java"
