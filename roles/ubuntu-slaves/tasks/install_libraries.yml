@@ -153,6 +153,7 @@
       - ruby-dev
       - screen
       - sharutils
+      - shellcheck
       - sloccount
       - g++-4.8-multilib
       - libstdc++-4.8-dev
