@@ -166,3 +166,23 @@
     when: setup_clover_license
 
 
+  - name: "Importing asf_internal apt key"
+    sudo: yes
+    sudo_user: root
+    shell: apt-key adv --keyserver pool.sks-keyservers.net --recv-keys 0x7A00258D
+
+  - name: "Adding asf_internal apt repo"
+    sudo: yes
+    sudo_user: root
+    apt_repository: repo='deb https://packages.apache.org/asf_internal trusty main' state=present
+
+  - name: "Install JDK7u79 unlimited security"
+    sudo: yes 
+    apt: pkg=asf-build-jdk1.7.0_79-unlimited-security state=present update_cache=yes
+    register: 7u79
+
+  - name: "Symlink JDK7u79 to /home/jenkins/tools/java"
+    sudo: yes
+    sudo_user: jenkins
+    file: src=/usr/local/jenkins/java/jdk1.7.0_79 dest={{tools_home}}/java/jdk1.7.0_79 state=link
+    when: 7u79|changed
