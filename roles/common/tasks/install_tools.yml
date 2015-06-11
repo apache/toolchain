@@ -125,37 +125,37 @@
     sudo: yes
     sudo_user: jenkins
     file: src=apache-maven-{{maven_version}} dest={{maven_home}}/latest state=link
-    when: get_clover|changed
+    when: get_maven|changed
 
   - name: install tools | symlink ant -> latest
     sudo: yes
     sudo_user: jenkins
     file: src=apache-ant-{{ant_version}} dest={{ant_home}}/latest state=link
-    when: get_clover|changed
+    when: get_ant|changed
 
   - name: install tools | symlink forrest -> latest
     sudo: yes
     sudo_user: jenkins
     file: src=apache-forrest-{{forrest_version}} dest={{forrest_home}}/latest state=link
-    when: get_clover|changed
+    when: get_forrest|changed
 
   - name: install tools | symlink findbugs -> latest
     sudo: yes
     sudo_user: jenkins
     file: src=findbugs-{{findbugs_version}} dest={{findbugs_home}}/latest state=link
-    when: get_clover|changed
+    when: get_findbugs|changed
 
   - name: install tools | symlink jiracli -> latest
     sudo: yes
     sudo_user: jenkins
     file: src=jira-cli-{{jiracli_version}} dest={{jiracli_home}}/latest state=link
-    when: get_clover|changed
+    when: get_jiracli|changed
 
   - name: install tools | symlink jiracli | jiracli | jira.sh -> jira
     sudo: yes
     sudo_user: jenkins
     file: src={{jiracli_home}}/latest/jira.sh dest={{jiracli_home}}/latest/jira state=link
-    when: get_clover|changed
+    when: get_jiracli|changed
 
 ## Setup clover license 
 
