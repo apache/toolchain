@@ -87,31 +87,31 @@
     sudo: yes
     sudo_user: jenkins
     unarchive: copy=no src={{maven_home}}/maven.tar.gz dest={{maven_home}}
-    when: get_clover|changed
+    when: get_maven|changed
 
   - name: install tools | untar ant
     sudo: yes
     sudo_user: jenkins
     unarchive: copy=no src={{ant_home}}/ant.tar.gz dest={{ant_home}}
-    when: get_clover|changed
+    when: get_ant|changed
 
   - name: install tools | untar forrest
     sudo: yes
     sudo_user: jenkins
     unarchive: copy=no src={{forrest_home}}/forrest.tar.gz dest={{forrest_home}}
-    when: get_clover|changed
+    when: get_forrest|changed
 
   - name: install tools | untar findbugs
     sudo: yes
     sudo_user: jenkins
     unarchive: copy=no src={{findbugs_home}}/findbugs.tar.gz dest={{findbugs_home}}
-    when: get_clover|changed
+    when: get_findbugs|changed
 
   - name: install tools | untar jiracli
     sudo: yes
     sudo_user: jenkins
     unarchive: copy=no src={{jiracli_home}}/jiracli.zip dest={{jiracli_home}}
-    when: get_clover|changed
+    when: get_jiracli|changed
 
 ###symlink -> latest
 

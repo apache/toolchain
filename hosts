@@ -12,15 +12,22 @@ asf9[06:11].gq1.ygridcore.net
 [ubuntu-slaves:vars]
 jdk_version=7
 jvm_data_model=32
-ansible_ssh_user=$USER
+ansible_ssh_user=gmcdonald
 update_etc_hosts=false
 
 [hadoop-slaves:vars]
 jdk_version=6
 jvm_data_model=64
-ansible_ssh_user=$USER
+ansible_ssh_user=gmcdonald
 update_etc_hosts=true
+
+[buildbot-slaves]
+silvanus.apache.org
+
+[buildbot-slaves:vars]
+ansible_ssh_user=gmcdonald
 
 [slaves:children]
 ubuntu-slaves
 hadoop-slaves
+buildbot-slaves
