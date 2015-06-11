@@ -127,6 +127,12 @@
     file: src=apache-maven-{{maven_version}} dest={{maven_home}}/latest state=link
     when: get_maven|changed
 
+  - name: install tools | symlink maven2 -> latest2
+    sudo: yes
+    sudo_user: jenkins
+    file: src=apache-maven-2.2.1 dest={{maven_home}}/latest2 state=link
+    when: get_maven|changed
+
   - name: install tools | symlink ant -> latest
     sudo: yes
     sudo_user: jenkins
