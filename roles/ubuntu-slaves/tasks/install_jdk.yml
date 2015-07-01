@@ -28,3 +28,7 @@
     sudo: yes 
     apt: pkg=openjdk-7-jdk state=present update_cache=yes
     tags: openjdk7
+
+  - name: "Install Java 7 unlimited security"
+    sudo: yes
+    apt: pkg=asf-build-jdk1.7.0-79-unlimited-security state=present update_cache=yes
