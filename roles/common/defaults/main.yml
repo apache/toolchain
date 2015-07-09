@@ -6,7 +6,7 @@
  clover_version: 2.4.3
  findbugs_version: 2.0.3
  jiracli_version: 2.1.0
- maven_url: http://mirror.nexcess.net/apache/maven/maven-3/{{maven_version}}/binaries/apache-maven-{{maven_version}}-bin.tar.gz
+ maven_url: http://archive.apache.org/maven/maven-3/{{maven_version}}/binaries/apache-maven-{{maven_version}}-bin.tar.gz
  ant_url: http://www.dsgnwrld.com/am//ant/binaries/apache-ant-{{ant_version}}-bin.tar.gz
  forrest_url: http://archive.apache.org/dist/forrest/{{forrest_version}}/apache-forrest-{{forrest_version}}.tar.gz
  clover_url: http://www.atlassian.com/software/clover/downloads/binary/clover-ant-{{clover_version}}.zip
