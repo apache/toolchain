@@ -5,6 +5,12 @@
     tags: install_libraries
     copy: src=sources.list dest=/etc/apt/sources.list
 
+  - name: "Copying toolchains.xml"
+    sudo: yes
+    sudo_user: root
+    tags: install_libraries
+    copy: src=toolchains.xml dest=/home/jenkins/.m2/toolchains.xml
+
   - name: "Importing lxc-docker apt key"
     sudo: yes
     sudo_user: root
